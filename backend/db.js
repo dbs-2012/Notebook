@@ -1,6 +1,10 @@
-const mongoose = require('mongoose');
+// import mongoose from "mongoose";
 
-const mongoURI = "mongodb://127.0.0.1:27017/inotebook";
+const mongoose = require('mongoose');
+require("dotenv").config();
+
+const mongoURI = process.env.REACT_APP_DATABASE;
+console.log(mongoURI);
 
 const connectToMongo = () => {
     mongoose.connect(mongoURI, ()=>{
